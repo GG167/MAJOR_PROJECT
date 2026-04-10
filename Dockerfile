@@ -5,7 +5,6 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-# Install system libs for audio / build tools if you need PyAudio / speech packages
 RUN apt-get update && apt-get install -y \
     build-essential \
     libsndfile1 \
@@ -22,7 +21,8 @@ RUN pip install -r requirements.txt gunicorn
 
 COPY . .
 
-RUN py manage.py runserver collectstatic --noinput
+# ✅ FIXED HERE
+RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
