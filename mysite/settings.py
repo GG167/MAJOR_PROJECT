@@ -5,7 +5,11 @@ Django settings for mysite project.
 import os
 from pathlib import Path
 
-# BASE DIRECTORY
+# ================================
+
+# BASE DIRECTORY (FIXED)
+
+# ================================
 
 BASE_DIR = Path(**file**).resolve().parent.parent
 
@@ -17,7 +21,7 @@ BASE_DIR = Path(**file**).resolve().parent.parent
 
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'unsafe-secret-key')
 
-# Turn OFF in production (set env variable in Render)
+# Set DJANGO_DEBUG=False in Render
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
@@ -52,7 +56,7 @@ MIDDLEWARE = [
 'django.middleware.security.SecurityMiddleware',
 
 ```
-# ✅ Required for static files in production (Render)
+# Required for static files in production
 'whitenoise.middleware.WhiteNoiseMiddleware',
 
 'django.contrib.sessions.middleware.SessionMiddleware',
@@ -98,7 +102,7 @@ TEMPLATES = [
 
 # ================================
 
-# DATABASE (SQLite - simple setup)
+# DATABASE
 
 # ================================
 
@@ -136,25 +140,23 @@ USE_TZ = True
 
 # ================================
 
-# STATIC FILES CONFIG
+# STATIC FILES CONFIG (FIXED)
 
 # ================================
 
 STATIC_URL = '/static/'
 
-# Development static folder
+# Removed assets dependency to avoid build crash
 
-STATICFILES_DIRS = [
-BASE_DIR / "assets",
-]
+STATICFILES_DIRS = []
 
-# Production static folder
+# Folder where collectstatic stores files
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# WhiteNoise for serving static files
+# Safer WhiteNoise config
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # ================================
 
