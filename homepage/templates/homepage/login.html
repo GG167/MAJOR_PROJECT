@@ -1,0 +1,76 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<div style="background-color:#e6f2ff; min-height:100vh;">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top" style="background-color:#007BFF;">
+        <div class="container">
+            <a class="navbar-brand" style="font-size:150%;">
+                VOICE BASED EMAIL FOR THE BLIND
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="container d-flex justify-content-center" style="margin-top:120px;">
+
+        <div style="width:100%; max-width:400px; text-align:center;">
+
+            <h3 style="color:#003366; margin-bottom:30px;">Voice Login</h3>
+
+            <!-- Form -->
+            <form action="{% url 'homepage:login' %}" method="POST" id="autoForm">
+                {% csrf_token %}
+
+                <!-- Email -->
+                <div style="margin-bottom:25px;">
+                    <input type="email" id="email" name="email"
+                           class="form-control text-center"
+                           value="{{ email_value|default:'' }}"
+                           placeholder="Email "
+                           readonly>
+                </div>
+
+                <!-- Password -->
+                <div style="margin-bottom:25px;">
+                    <input type="password" id="password" name="password"
+                           class="form-control text-center"
+                           value="{{ password_value|default:'' }}"
+                           placeholder="Password "
+                           readonly>
+                </div>
+
+            </form>
+
+            <!-- Error -->
+            {% if error_message %}
+                <div class="alert alert-danger mt-3">
+                    {{ error_message }}
+                </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4" style="background-color:#003366; margin-top:50px;">
+        <div class="container">
+            <p class="text-center text-white m-0 small">© Voice Based Email</p>
+        </div>
+    </footer>
+
+</div>
+
+<!-- AUTO SUBMIT -->
+<script>
+    window.onload = function() {
+        setTimeout(function() {
+            document.getElementById("autoForm").submit();
+        }, 1500);
+    };
+</script>
+
+{% endblock %}

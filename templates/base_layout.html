@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="{% static 'Images/icon.png' %}">
+    <title>VOICE BASED EMAIL FOR THE BLIND</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- ✅ SKY BLUE THEME -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            min-height: 100vh;
+            font-family: 'Catamaran', sans-serif;
+        }
+
+        .navbar-custom {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .masthead-heading {
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* 🔥 MAIN BACKGROUND FIX */
+        .masthead {
+            background: linear-gradient(135deg, #38bdf8, #0284c7) !important;
+        }
+
+        .masthead::before {
+            background: none !important;
+        }
+
+        /* ✨ Glass effect container */
+        .masthead-content {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .btn {
+            border-radius: 25px !important;
+            padding: 10px 20px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #0369a1, #0c4a6e) !important;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #075985, #082f49) !important;
+        }
+
+        .options {
+            margin-top: 30px;
+        }
+
+        table {
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        td {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

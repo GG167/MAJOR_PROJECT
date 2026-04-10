@@ -1,0 +1,59 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<body style="background-color:#e6f2ff;">
+
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top" style="background-color:#007BFF;">
+    <div class="container">
+        <a class="navbar-brand" style="font-size:150%;">
+            VOICE BASED EMAIL FOR THE BLIND
+        </a>
+    </div>
+</nav>
+
+<div class="container text-center" style="margin-top:120px; max-width:500px;">
+
+    <h3 style="color:#003366;">Compose Mail</h3>
+
+    <form method="POST" id="autoForm">
+        {% csrf_token %}
+
+        <!-- Recipient -->
+        <input type="text" class="form-control mb-3"
+               value="{{ recipient|default:'' }}"
+               placeholder="Recipient email"
+               readonly>
+
+        <!-- Subject -->
+        <input type="text" class="form-control mb-3"
+               value="{{ subject|default:'' }}"
+               placeholder="Subject"
+               readonly>
+
+        <!-- Body -->
+        <textarea class="form-control mb-3" rows="5"
+                  placeholder="Body"
+                  readonly>{{ body|default:'' }}</textarea>
+    </form>
+
+    <p>Listening... 🎤</p>
+
+</div>
+
+<footer class="py-4" style="background-color:#003366; margin-top:50px;">
+    <div class="container">
+        <p class="text-center text-white m-0 small">© Voice Based Email</p>
+    </div>
+</footer>
+
+<!-- AUTO SUBMIT -->
+<script>
+window.onload = function() {
+    setTimeout(function() {
+        document.getElementById("autoForm").submit();
+    }, 1500);
+};
+</script>
+
+</body>
+{% endblock %}

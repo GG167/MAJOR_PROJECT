@@ -1,0 +1,138 @@
+/* ===== UI ENHANCEMENT (Safe + Improved) ===== */
+
+/* Smooth transition for all elements */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Body Background */
+body {
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card Improvement */
+.card {
+  border-radius: 18px !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important;
+  border: none !important;
+  transition: 0.3s;
+  backdrop-filter: blur(8px);
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 30px !important;
+  padding: 10px 20px !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+/* Primary Button */
+.btn-primary {
+  background: linear-gradient(45deg, #4f46e5, #6366f1) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(79,70,229,0.3);
+}
+
+.btn-primary:hover {
+  transform: scale(1.07);
+  background: linear-gradient(45deg, #4338ca, #4f46e5) !important;
+  box-shadow: 0 6px 20px rgba(79,70,229,0.5);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background: linear-gradient(45deg, #10b981, #059669) !important;
+  border: none !important;
+}
+
+.btn-secondary:hover {
+  transform: scale(1.05);
+}
+
+/* Form Inputs */
+.form-control {
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  border: 1px solid #d1d5db !important;
+  padding: 10px;
+}
+
+.form-control:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 8px rgba(99,102,241,0.4) !important;
+  transform: scale(1.02);
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-radius: 0 0 15px 15px;
+  padding: 12px 20px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 22px;
+  color: #4f46e5 !important;
+}
+
+/* Navbar Links */
+.navbar a {
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.navbar a:hover {
+  color: #4f46e5 !important;
+}
+
+/* Table Styling */
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.table thead {
+  background: linear-gradient(45deg, #4f46e5, #6366f1);
+  color: white;
+}
+
+.table tbody tr {
+  transition: 0.2s;
+}
+
+.table tbody tr:hover {
+  background: #eef2ff;
+  transform: scale(1.01);
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: 0.5px;
+}
+
+/* Small UI polish */
+input::placeholder {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* Optional: Scrollbar (modern look) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
