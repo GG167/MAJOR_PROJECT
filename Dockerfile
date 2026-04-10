@@ -22,7 +22,7 @@ RUN pip install -r requirements.txt gunicorn
 
 COPY . .
 
-RUN py manage.py collectstatic --noinput
+RUN py manage.py runserver collectstatic --noinput
 
 EXPOSE 8000
 
